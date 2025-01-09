@@ -67,7 +67,10 @@ function kickStartNow(){
 }
 
 function login() {
-	kickStartNow();			
+	kickStartNow();	
+	const path = window.location.pathname;
+	console.log("test")
+	console.log(path);		
 	plivoBrowserSdk.client.login("webtest18654905224972245423", "ur6anCl@9");
 }
 
@@ -181,6 +184,9 @@ function onReady(){
 function onLogin(){
 	$('#loginContainer').hide();
 	$('#callContainer').show();
+	const path = window.location.pathname;
+	console.log("test")
+	console.log(path);
 	document.body.style.backgroundImage = 'none';
 	let username = plivoBrowserSdk.client.userName;
 	$('#sipUserName').html(username+'@'+plivoBrowserSdk.client.phone.configuration.hostport_params);
