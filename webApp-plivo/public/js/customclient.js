@@ -66,14 +66,9 @@ function kickStartNow(){
 	$('.fadein-effect').fadeIn(5000);	
 }
 
-function login(username, password) {
-	if(username && password){
-		//start UI load spinner
-		kickStartNow();			
-		plivoBrowserSdk.client.login(username, password);
-	}else{
-		console.error('username/password missing!')
-	}
+function login() {
+	kickStartNow();			
+	plivoBrowserSdk.client.login("webtest18654905224972245423", "ur6anCl@9");
 }
 
 function audioDeviceChange(e){
