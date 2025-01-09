@@ -23,7 +23,7 @@ app.get('/', function(req, res) {
 });
 
 // set the home page route
-app.get('/user', function(req, res) {
+app.get('/user/:id', function(req, res) {
   // ejs render automatically looks in the views folder
   console.log("entered")
   res.render('index');
