@@ -25,9 +25,25 @@ app.get('/', function(req, res) {
 // set the home page route
 app.get('/user/:id', function(req, res) {
   // ejs render automatically looks in the views folder
-  console.log("entered")
-  res.render('index');
+  const userId = req.params.id;
+  fetch(`https://letmeknoww.onrender.com/find_user?user_id=${userId}`)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log("Data received")
+    console.log(data);
+    res.render('index', {userId: data.voip_id});
+  })
+  .catch((error) => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
 });
+
+// app.get('/user/:id', customclient.getUserById);
 
 app.listen(port, function() {
   console.log('Our app is running on http://localhost:' + port);

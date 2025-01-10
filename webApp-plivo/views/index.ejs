@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>plivo webphone</title>
+	<title>LetMeKnoww</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -609,14 +609,19 @@
 	<script src="/lib/intlTelInput.min.js"></script>
 	<script src="/js/utils.js"></script>
 	<script src="/js/customclient.js"></script>
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			console.log( "HTML ready!" );
 			$('[data-toggle="tooltip"]').tooltip();
 			initPhone();
 		});
+
+		const userId = "<%= userId %>";
 		
 		var input = document.querySelector("#toNumber");
+		console.log("data received from server.js in index.ejs")
+		console.log(userId)
 		var iti = window.intlTelInput(input,({
 		}));
 		setIti(iti);

@@ -873,7 +873,8 @@ $('#tmute').click(function(e){
 });
 
 $('#makecall').click(function(e){
-	var to = "vasanthkumarvelusamy277520943309979",
+	console.log("same data received in customclient js")
+	var to = userId,
 		extraHeaders={},
 		customCallerId= localStorage.getItem('callerId');
 	if(customCallerId){
