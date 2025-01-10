@@ -9,15 +9,17 @@
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="0" />
-	<link rel="icon" type="image/png" href="img/favicon.png">
-	<script src="lib/jquery.min.js"></script>
+	<link rel="icon" type="image/png" href="./img/favicon.png">
+	<script src="/lib/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/intlTelInput.css">
+	<link rel="stylesheet" href="../css/intlTelInput.css">
+	<script src="/lib/intlTelInput.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
-	<link rel="stylesheet" href="/css/notify.css">
-	<link rel="stylesheet" type="text/css" href="css/newstyle.css"> 
+	<link rel="stylesheet" href="../css/notify.css">
+	<script src="../lib/notify.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/newstyle.css"> 
 </head>
 <body>
 	<div class="loader"></div>
@@ -34,7 +36,7 @@
 				<h6>Account will not be created</h6>
 			</span>
 			<div class="row">
-				<button type="submit" class="btn btn-success" id=clickLogin>Sign In</button>
+				<button type="submit" class="btn btn-success" id=clickLogin>SignIn</button>
 			</div>
 		</div>
 	</div>
@@ -303,7 +305,7 @@
 		    </div>
 		    <div class="modal-body">
 				<div class="container">          
-				  <img src="img/micdenied.png" class="img-rounded" width="304" height="236"> 
+				  <img src="../img/micdenied.png" class="img-rounded" width="304" height="236"> 
 				</div>
 		    </div>
 		    <div class="modal-footer">
@@ -603,10 +605,10 @@
 	</div>
 
 	<script src="https://cdn.plivo.com/sdk/browser/v2/plivo.min.js"></script>
-	<script src="lib/notify.js"></script>
-	<script src="lib/intlTelInput.min.js"></script>
-	<script src="js/utils.js"></script>
-	<script src="js/customclient.js"></script>
+	<script src="/lib/notify.js"></script>
+	<script src="/lib/intlTelInput.min.js"></script>
+	<script src="/js/utils.js"></script>
+	<script src="/js/customclient.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			console.log( "HTML ready!" );

@@ -68,9 +68,9 @@ function kickStartNow(){
 
 function login() {
 	kickStartNow();	
-	const path = window.location.pathname;
-	console.log("test")
-	console.log(path);		
+	// const path = window.location.pathname;
+	// console.log("test")
+	// console.log(path);		
 	plivoBrowserSdk.client.login("webtest18654905224972245423", "ur6anCl@9");
 }
 
