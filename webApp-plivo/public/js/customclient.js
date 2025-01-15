@@ -71,7 +71,7 @@ function login() {
 	// const path = window.location.pathname;
 	// console.log("test")
 	// console.log(path);		
-	plivoBrowserSdk.client.login("webtest18654905224972245423", "ur6anCl@9");
+	plivoBrowserSdk.client.login("web627857741664609", "ur6anCl@9");
 }
 
 function audioDeviceChange(e){
@@ -874,7 +874,8 @@ $('#tmute').click(function(e){
 
 $('#makecall').click(function(e){
 	console.log("same data received in customclient js")
-	var to = userId,
+	var to = "privateuser3200364542961338330584",
+	// var to = "iossample69075541768525161253",
 		extraHeaders={},
 		customCallerId= localStorage.getItem('callerId');
 	if(customCallerId){
