@@ -71,7 +71,7 @@ function login() {
 	// const path = window.location.pathname;
 	// console.log("test")
 	// console.log(path);		
-	plivoBrowserSdk.client.login("privateuser3200364542961338330584", "ur6anCl@9");
+	plivoBrowserSdk.client.login("testing88196851880496862", "Vasanth@123");
 }
 
 function audioDeviceChange(e){
