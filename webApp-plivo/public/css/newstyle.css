@@ -51,7 +51,7 @@ body
 .card {
   height: 80vh;  
   width: 85vw; 
-  min-width: 400px; /* Ensures the card is at least 300px wide */
+  min-width: 300px; /* Ensures the card is at least 300px wide */
   max-width: 600px;
   min-height: 500px;
   max-height: 650px;
@@ -267,6 +267,7 @@ p
     -webkit-transition: .1s ease-in background-color;
     -webkit-font-smoothing: antialiased;
     letter-spacing: 0.5px;
+    font-size: medium;
     height: 44px;
 }
 
