@@ -37,19 +37,6 @@ body
   border-width: 4px;
 }
 
-.card-call {
-  height: 80vh; 
-  width: 85vw; 
-  min-width: 200px; /* Ensures the card is at least 300px wide */
-  max-width: 600px;
-  background-color: rgb(255, 255, 255); 
-  border-radius: 16px; ; 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 30px;
-}
-
 .card-point-image {
   width: 24px;
   /* Width of the circle */
@@ -66,13 +53,13 @@ body
   width: 85vw; 
   min-width: 200px; /* Ensures the card is at least 300px wide */
   max-width: 600px;
+  min-height: 450px;
+  max-height: 650px;
   background-color: rgb(255, 255, 255); 
   border-radius: 16px; ; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  /* margin-top: 440px; */
   padding: 30px;
 }
 
