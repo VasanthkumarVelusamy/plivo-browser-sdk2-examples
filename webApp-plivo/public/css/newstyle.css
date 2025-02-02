@@ -39,7 +39,7 @@ body
 
 .card-call {
   height: 80vh; 
-  width: 320px; 
+  width: 90vw; 
   background-color: rgb(255, 255, 255); 
   border-radius: 16px; ; 
   display: flex;
@@ -61,7 +61,7 @@ body
 
 .card {
   height: 80vh;  
-  width: 320px; 
+  width: 90vw; 
   background-color: rgb(255, 255, 255); 
   border-radius: 16px; ; 
   display: flex;
