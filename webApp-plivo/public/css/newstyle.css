@@ -128,13 +128,14 @@ body
   display: flex;
   justify-content: center;
   gap: 10%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.call-button-container {
+.call-active-controls-container {
   display: flex;
   justify-content: center;
   gap: 10%;
+  margin-bottom: 20px;
 }
 
 /* .card-call-button {

@@ -302,7 +302,7 @@ function onCallTerminated(evt, callInfo){
 function changeControlsForCallEnded() {
 	$('#makecall').show();
 	$('#hangup').hide();
-	$('.call-button-container').hide();
+	$('.call-active-controls-container').hide();
 	$('#connecting-text').hide();
 }
 
@@ -901,7 +901,7 @@ $('#makecall').click(function(e){
 	// $('#hangup').show();
 	$('#makecall').hide();
 	$('#hangup').show();
-	$('.call-button-container').show();
+	$('.call-active-controls-container').show();
 	$('#connecting-text').show();
 	var callEnabled = $('#makecall').attr('class').match('disabled');
 	if(!to || !plivoBrowserSdk || !!callEnabled){return};
