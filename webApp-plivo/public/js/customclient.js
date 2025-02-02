@@ -287,6 +287,7 @@ function onCallAnswered(callInfo){
 
 function onCallTerminated(evt, callInfo){
 	$('#callstatus').html('Call Ended');
+	changeControlsForCallEnded();
 	console.info('onCallTerminated', evt);
 	clearStars();
 	$('#sendQualityFeedback').modal('show');
@@ -298,11 +299,15 @@ function onCallTerminated(evt, callInfo){
 	}
 }
 
-function onCallFailed(reason, callInfo){
+function changeControlsForCallEnded() {
 	$('#makecall').show();
 	$('#hangup').hide();
 	$('.call-button-container').hide();
 	$('#connecting-text').hide();
+}
+
+function onCallFailed(reason, callInfo){
+	changeControlsForCallEnded();
 	if (callInfo) {
 		console.log(JSON.stringify(callInfo));
 		console.info(`onCallFailed ${reason} ${callInfo.callUUID} ${callInfo.direction}`);
