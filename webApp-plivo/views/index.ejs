@@ -200,6 +200,10 @@
 				<p id="timer-text" style="display: none;">0:00</p>
 			</div>
 			<p id="connecting-text" Connecting...</p>
+			<div class="text-center">
+				<h4 id="boundType">Fetching...</h4>
+				<h2 id="callDuration">00:00</h2>
+			</div>	
 		</div>
 
 		<div class="card-button-container">
@@ -218,7 +222,7 @@
 			<button id="muted-mic-active" class="card-call-button" onclick="toggleMicButtons()" style="display: none;">
 				<img src="../img/muted-mic-active.png" class="card-button-image">
 			</button>
-			<button id="muted-mic-inactive" class="card-call-button" onclick="toggleMicButtons()">
+			<button id="muted-mic-inactive" class="card-call-button" onclick="toggleMicButtons()" data-toggle="mute">
 				<img src="../img/muted-mic-inactive.png" class="card-button-image">
 			</button>
 			<button id="hangup" class="card-disconnect-button" style="display: none;" onclick="hangupClicked()">
@@ -593,9 +597,9 @@
 									<div class="row" style="margin-top: 40px;">
 										<div class="form-group col-sm-1">
 										</div>
-										<div class="form-group col-sm-1" data-toggle="mute" id="tmute">
+										<!-- <div class="form-group col-sm-1" data-toggle="mute" id="tmute">
 											<i class="tmute fa fa-microphone fa-lg callinfoIcon" style="cursor:pointer;"></i>
-										</div>
+										</div> -->
 										<div class="pids-wrapper">
 											<div class="pidlocalaudio callinfoPid"></div>
 											<div class="pidlocalaudio"></div>
