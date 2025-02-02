@@ -18,13 +18,23 @@ body
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: none;
     color: #212933;
-    background-color: #dadada;
+    background-color: #9c9c9c;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #card-section {
+}
+
+.call-initiated-controls {
+  display: flex;
+  justify-content: space-around;
+  /* width: 80%; */
+  border-color: red;
+  border-width: 4px;
 }
 
 .card-call {
@@ -59,7 +69,7 @@ body
   flex-direction: column;
   justify-content: space-between;
 
-  margin-top: 40px;
+  /* margin-top: 440px; */
   padding: 30px;
 }
 

@@ -806,6 +806,11 @@ function showKeypadInfo() {
 	$('#showKeypad').html('SHOW KEYPAD');
 }
 
+function showCallInitiatedControls() {
+	$('#makecall').hide();
+	$('#call-initiated').show();
+}
+
 
 /*
 	Capture UI onclick triggers 
@@ -875,13 +880,16 @@ $('#makecall').click(function(e){
 	// var to = "iossample69075541768525161253",
 		extraHeaders={},
 		customCallerId= localStorage.getItem('callerId');
+		console.log("calling...")
+		console.log(userId)
 	if(customCallerId){
 		customCallerId = customCallerId.replace("+","");
 		extraHeaders = {'X-PH-callerId': customCallerId};		
 	}
 	extraHeaders["X-PH-conference"] = "true";
-	$('#makecall').hide();
-	$('#hangup').show();
+	// $('#makecall').hide();
+	// $('#hangup').show();
+	showCallInitiatedControls()
 	var callEnabled = $('#makecall').attr('class').match('disabled');
 	if(!to || !plivoBrowserSdk || !!callEnabled){return};
 	if(!plivoBrowserSdk.client.isLoggedIn){alert('You\'re not Logged in!')}

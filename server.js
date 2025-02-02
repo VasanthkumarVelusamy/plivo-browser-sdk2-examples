@@ -36,7 +36,7 @@ app.get('/user/:id', function(req, res) {
   .then((data) => {
     console.log("Data received")
     console.log(data);
-    res.render('index', {userId: data.voip_id});
+    res.render('index', {userId: data.voip_id, userName: data.name});
   })
   .catch((error) => {
     console.error('There was a problem with the fetch operation:', error);
