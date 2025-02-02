@@ -299,6 +299,10 @@ function onCallTerminated(evt, callInfo){
 }
 
 function onCallFailed(reason, callInfo){
+	$('#makecall').show();
+	$('#hangup').hide();
+	$('.call-button-container').hide();
+	$('#connecting-text').hide();
 	if (callInfo) {
 		console.log(JSON.stringify(callInfo));
 		console.info(`onCallFailed ${reason} ${callInfo.callUUID} ${callInfo.direction}`);
@@ -819,6 +823,7 @@ function showCallInitiatedControls() {
 
 $('.hangup').click(function(){
 	console.info('Hangup');
+	console.log("hangup")
 	if(plivoBrowserSdk.client.callSession){
 		plivoBrowserSdk.client.hangup();
 	    showKeypadInfo();
@@ -889,7 +894,10 @@ $('#makecall').click(function(e){
 	extraHeaders["X-PH-conference"] = "true";
 	// $('#makecall').hide();
 	// $('#hangup').show();
-	showCallInitiatedControls()
+	$('#makecall').hide();
+	$('#hangup').show();
+	$('.call-button-container').show();
+	$('#connecting-text').show();
 	var callEnabled = $('#makecall').attr('class').match('disabled');
 	if(!to || !plivoBrowserSdk || !!callEnabled){return};
 	if(!plivoBrowserSdk.client.isLoggedIn){alert('You\'re not Logged in!')}
@@ -1180,4 +1188,41 @@ function initPhone(username, password){
 	checkBrowserComplaince(plivoBrowserSdk.client);	
 	starFeedback();
 	console.log('initPhone ready!')
+}
+
+function toggleMicButtons() {
+	var btn1 = document.getElementById("muted-mic-active");
+	var btn2 = document.getElementById("muted-mic-inactive");
+
+	if (btn1.style.display === "none") {
+		btn1.style.display = "block";
+		btn2.style.display = "none";
+	} else {
+		btn1.style.display = "none";
+		btn2.style.display = "block";
+	}
+}
+
+function toggleSpeakerButtons() {
+	var btn1 = document.getElementById("speaker-active");
+	var btn2 = document.getElementById("speaker-inactive");
+
+	if (btn1.style.display === "none") {
+		btn1.style.display = "block";
+		btn2.style.display = "none";
+	} else {
+		btn1.style.display = "none";
+		btn2.style.display = "block";
+	}
+}
+
+function hangupClicked() {
+	console.info('Hangup');
+	console.log("hangup")
+	if(plivoBrowserSdk.client.callSession){
+		plivoBrowserSdk.client.hangup();
+	    showKeypadInfo();
+	}else{
+		callOff();
+	}
 }
