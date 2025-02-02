@@ -109,8 +109,8 @@ body
 }
 
 .card-button-image {
-  height: 44px;
-  width: 44px;
+  height: 50px;
+  width: 50px;
 }
 
 .card-call-button {
@@ -276,7 +276,7 @@ p
     -webkit-transition: .1s ease-in background-color;
     -webkit-font-smoothing: antialiased;
     letter-spacing: 1px;
-    height: 40px;
+    height: 44px;
 }
 
 .btn-lg{
