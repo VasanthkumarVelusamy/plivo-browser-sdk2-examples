@@ -277,6 +277,7 @@ function onCallAnswered(callInfo){
 		incomingNotifications.delete(callInfo.callUUID);
 		}
 	}
+	$('#callDuration').show();
 	timer = 0;
 	if (window.calltimer) clearInterval(window.calltimer);
 	window.calltimer = setInterval(function(){
@@ -286,6 +287,7 @@ function onCallAnswered(callInfo){
 }
 
 function onCallTerminated(evt, callInfo){
+	$('#callDuration').hide();
 	$('#callstatus').html('Call Ended');
 	changeControlsForCallEnded();
 	console.info('onCallTerminated', evt);
@@ -439,7 +441,7 @@ function onIncomingCallIgnored(callInfo){
 function callOff(reason){
 	$('.callinfo').hide();
 	$('.incomingCallDefault').hide();
-	showKeypadInfo();
+	// showKeypadInfo();
 	resetMute();
 	window.calltimer? clearInterval(window.calltimer) : false;
 	callStorage.dur = timer.toString().calltimer();
@@ -835,6 +837,7 @@ $('.hangup').click(function(){
 	}else{
 		callOff();
 	}
+	callOff();
 });
 
 $('.answerIncoming').click(function(){
