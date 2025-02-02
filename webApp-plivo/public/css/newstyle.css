@@ -38,7 +38,7 @@ body
 }
 
 .card-call {
-  height: 65vh; 
+  height: 80vh; 
   width: 320px; 
   background-color: rgb(255, 255, 255); 
   border-radius: 16px; ; 
@@ -60,7 +60,7 @@ body
 }
 
 .card {
-  height: 65vh;  
+  height: 80vh;  
   width: 320px; 
   background-color: rgb(255, 255, 255); 
   border-radius: 16px; ; 
