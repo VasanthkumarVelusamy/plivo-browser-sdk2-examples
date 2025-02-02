@@ -18,8 +18,122 @@ body
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: none;
     color: #212933;
-    background-color: #f8f9fa;
+    background-color: #dadada;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+#card-section {
+}
+
+.card-call {
+  height: 570px; 
+  width: 320px; 
+  background-color: rgb(255, 255, 255); 
+  border-radius: 16px; ; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding: 30px;
+}
+
+.card-point-image {
+  width: 24px;
+  /* Width of the circle */
+  height: 24px;
+}
+
+.card-point-with-image {
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  height: 570px; 
+  width: 320px; 
+  background-color: rgb(255, 255, 255); 
+  border-radius: 16px; ; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-top: 40px;
+  padding: 30px;
+}
+
+.card-username {
+  text-align: center; 
+}
+
+.card-description {
+  padding-top: 20px; 
+  color: black;
+}
+
+.card-points-container {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card-point {
+  padding: 10px;
+  font-weight: 600;
+}
+
+.card-usage-justification {
+  color: gray;
+  font-weight: 300;
+  font-size: 10px;
+  text-align: center;
+  font-size: 68%; 
+  line-height: 13px;
+}
+
+.card-button {
+  color: white;
+  font-weight: 400;
+}
+
+.card-button-image {
+  height: 44px;
+  width: 44px;
+}
+
+.card-call-button {
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+}
+
+.card-disconnect-button {
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+}
+
+.card-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* .card-call-button {
+  background-image: url('../img/call-button.png');
+  height: 44px;
+  width: 44px;
+} */
 
 p
 {
@@ -274,7 +388,11 @@ p
 }
 
 #clickLogin{
-  width:30%;
+  width:100%;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
 }
 
 .white-shadow{
@@ -459,13 +577,13 @@ a, a:focus, a:hover, a:visited {
   margin-top:5px;
 }
 
-.answerIncoming, .makecall{
+.answerIncoming{
   width: 100%;
   background-color: #43A047 !important;
   border-color: #43A047 !important;
 }
 
-.answerIncoming:hover, .answerIncoming:active, .answerIncoming:focus, .answerIncoming:visited, .makecall:hover, .makecall:active, .makecall:focus, .makecall:visited{
+.answerIncoming:hover, .answerIncoming:active, .answerIncoming:focus, .answerIncoming:visited{
   background-color: rgb(16, 128, 22) !important;
   border-color: rgb(16, 128, 22) !important;
 }

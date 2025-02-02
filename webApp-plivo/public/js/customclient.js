@@ -54,9 +54,6 @@ var _forEach = function(cb){
 	}
 }
 
-// UI tweaks
-$('#makecall').attr('class', 'btn btn-success btn-block flatbtn makecall disabled');
-
 function date(){
 	return (new Date()).toISOString().substring(0, 10)+" "+Date().split(" ")[4];
 }
@@ -183,7 +180,7 @@ function onReady(){
 
 function onLogin(){
 	$('#loginContainer').hide();
-	$('#callContainer').show();
+	$('#call').show();
 	const path = window.location.pathname;
 	console.log("test")
 	console.log(path);
@@ -199,8 +196,7 @@ function onLogin(){
 		callerid.value = customCallerId;
 	}
 	plivoBrowserSdk.client.audio.speakerDevices.set('default')
-	$('#makecall').attr('class', 'btn btn-success btn-block flatbtn makecall');
-	customAlert( "connected" , "info", 'info');
+	// $('#makecall').attr('class', 'makecall');
 	$('.loader').hide();
 }
 
@@ -224,6 +220,7 @@ function performLogout(){
 	document.body.style.backgroundImage = 'url(img/background.svg)';
 	$('#loginContainer').show();
 	$('#callContainer').hide();
+	$('#call').hide();
 	$('.loader').hide();
 	$('#toNumber').val("");
 	iti.setCountry("us");
@@ -883,6 +880,8 @@ $('#makecall').click(function(e){
 		extraHeaders = {'X-PH-callerId': customCallerId};		
 	}
 	extraHeaders["X-PH-conference"] = "true";
+	$('#makecall').hide();
+	$('#hangup').show();
 	var callEnabled = $('#makecall').attr('class').match('disabled');
 	if(!to || !plivoBrowserSdk || !!callEnabled){return};
 	if(!plivoBrowserSdk.client.isLoggedIn){alert('You\'re not Logged in!')}
