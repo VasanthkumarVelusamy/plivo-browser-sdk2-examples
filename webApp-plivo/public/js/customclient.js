@@ -277,7 +277,7 @@ function onCallAnswered(callInfo){
 		incomingNotifications.delete(callInfo.callUUID);
 		}
 	}
-	$('#callDuration').show();
+	showTimer()
 	timer = 0;
 	if (window.calltimer) clearInterval(window.calltimer);
 	window.calltimer = setInterval(function(){
@@ -927,6 +927,11 @@ $('#updateSettings').click(function(e){
 	updateSettings(defaultSettings);	
 
 });
+
+function showTimer() {
+	$('#connecting-text').hide();
+	$('#callDuration').show();
+}
 
 $('#resetSettings').click(function(e){
 	resetSettings();
