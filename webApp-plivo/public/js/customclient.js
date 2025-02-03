@@ -828,17 +828,17 @@ function showCallInitiatedControls() {
 */
 
 
-$('.hangup').click(function(){
-	console.info('Hangup');
-	console.log("hangup")
-	if(plivoBrowserSdk.client.callSession){
-		plivoBrowserSdk.client.hangup();
-	    showKeypadInfo();
-	}else{
-		callOff();
-	}
-	callOff();
-});
+// $('.hangup').click(function(){
+// 	console.info('Hangup');
+// 	console.log("hangup")
+// 	if(plivoBrowserSdk.client.callSession){
+// 		plivoBrowserSdk.client.hangup();
+// 	    showKeypadInfo();
+// 	}else{
+// 		callOff();
+// 	}
+// 	// callOff();
+// });
 
 $('.answerIncoming').click(function(){
 	isIncomingCallPresent = false;
