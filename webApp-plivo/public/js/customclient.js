@@ -187,7 +187,7 @@ function onLogin(){
 	document.body.style.backgroundImage = 'none';
 	let username = plivoBrowserSdk.client.userName;
 	$('#sipUserName').html(username+'@'+plivoBrowserSdk.client.phone.configuration.hostport_params);
-	document.querySelector('title').innerHTML = username;
+	document.querySelector('title').innerHTML = "LetMeKnoww";
 	$('#phonestatus').html('online');
 	console.info('Logged in');
 	let customCallerId= localStorage.getItem('callerId')

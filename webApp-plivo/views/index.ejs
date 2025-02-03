@@ -26,7 +26,7 @@
 <body>
 	<div class="loader"></div>
 	<!-- login page div -->
-	<div class="card" id="loginContainer">
+	<div class="card" id="loginContainer" style="display: none;">
 		 <div>
 			<h1 id="foundUserName1" class="card-username"></h1>
 			<p class="card-description"">Before calling this user, please authenticate to help us verify your identity.</p>
@@ -50,6 +50,7 @@
 			<button type="submit" class="btn" id=clickLogin>Authenticate to Call</button>
 		</div>
 	</div>
+	<!-- <div id="loading"><p>Loading...</p></div> -->
 
 	<!-- settings div -->
 	<div class="modal fade" id="configparams" role="dialog">
@@ -684,6 +685,18 @@
 
 		const userId = "<%= userId %>";
 		const userName = "<%= userName %>";
+		console.log("loaded username")
+		console.log(userName)
+		// $('loading').hide()
+		// document.getElementById('loading').style.display = "none"
+		if (userName) {
+			console.log("username is valid", userName)
+			document.querySelector(".loader").style.display = "none"
+			document.getElementById('loginContainer').style.display = "flex"
+		} else {
+			document.getElementById('loginContainer').style.display = "none"
+			document.querySelector(".loader").style.display = "block"
+		}
 		document.getElementById('foundUserName1').innerText = userName;
 		document.getElementById('foundUserName2').innerText = userName;
 
