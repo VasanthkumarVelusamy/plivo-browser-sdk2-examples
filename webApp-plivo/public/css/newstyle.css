@@ -117,6 +117,12 @@ body
   color: black;
 }
 
+.card-call-duration {
+  font-size: clamp(16px, 4vw, 18px);
+  display: none;
+  color:gray;
+}
+
 .card-disconnect-button {
   background: none;
   border: none;
