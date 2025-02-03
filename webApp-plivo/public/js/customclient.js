@@ -292,7 +292,7 @@ function onCallTerminated(evt, callInfo){
 	changeControlsForCallEnded();
 	console.info('onCallTerminated', evt);
 	clearStars();
-	$('#sendQualityFeedback').modal('show');
+	// $('#sendQualityFeedback').modal('show');
 	if (callInfo && callInfo.callUUID === plivoBrowserSdk.client.getCallUUID()) {
 		console.info(JSON.stringify(callInfo));
 		callOff(evt);
@@ -1172,7 +1172,7 @@ function initPhone(username, password){
 	plivoBrowserSdk.client.on('onMediaPermission', onMediaPermission);
 	plivoBrowserSdk.client.on('remoteAudioStatus', remoteAudioStatus);
 	plivoBrowserSdk.client.on('mediaMetrics',mediaMetrics);
-	plivoBrowserSdk.client.on('audioDeviceChange',audioDeviceChange);
+	// plivoBrowserSdk.client.on('audioDeviceChange',audioDeviceChange);
 	plivoBrowserSdk.client.on('onPermissionDenied', onPermissionDenied);
 	plivoBrowserSdk.client.on('onNoiseReductionReady', onNoiseReductionReady); 
 	plivoBrowserSdk.client.on('onConnectionChange', onConnectionChange); // To show connection change events
