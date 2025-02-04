@@ -129,7 +129,9 @@ function mediaMetrics(obj){
 	* During `onCallTerminated` event check for `triggerFB` flag
 	*/
 	sessionStorage.setItem('triggerFB',true);
+
 	console.table([obj]);
+	console.log(obj.type);
 	var classExist = document.querySelector('.-'+obj.type);
 	var message = obj.type;
 	/**
@@ -290,6 +292,7 @@ function onCallTerminated(evt, callInfo){
 	$('#callDuration').hide();
 	$('#callstatus').html('Call Ended');
 	changeControlsForCallEnded();
+	resetAudio();
 	console.info('onCallTerminated', evt);
 	clearStars();
 	// $('#sendQualityFeedback').modal('show');
@@ -1216,6 +1219,24 @@ function toggleMicButtons() {
 	}
 }
 
+function muteButtonTapped() {
+	plivoBrowserSdk.client.mute();
+	toggleMicButtons();
+}
+
+function unmuteButtonTapped() {
+	plivoBrowserSdk.client.unmute();
+	toggleMicButtons();
+}
+
+function resetAudio() {
+	plivoBrowserSdk.client.unmute();
+	var btn1 = document.getElementById("muted-mic-active");
+	var btn2 = document.getElementById("muted-mic-inactive");
+	btn1.style.display = "none";
+	btn2.style.display = "block";
+}
+
 function toggleSpeakerButtons() {
 	var btn1 = document.getElementById("speaker-active");
 	var btn2 = document.getElementById("speaker-inactive");
@@ -1227,6 +1248,14 @@ function toggleSpeakerButtons() {
 		btn1.style.display = "none";
 		btn2.style.display = "block";
 	}
+}
+
+function showMuted(muteButton, unmuteButton) {
+
+}
+
+function showUnmuted(muteButton, unmuteButton) {
+
 }
 
 function hangupClicked() {

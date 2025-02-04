@@ -215,10 +215,10 @@
 			<button id="speaker-inactive" class="card-call-button" onclick="toggleSpeakerButtons()">
 				<img src="../img/speaker-inactive.png" class="card-button-image">
 			</button>
-			<button id="muted-mic-active" class="card-call-button" onclick="toggleMicButtons()" style="display: none;">
+			<button id="muted-mic-active" class="card-call-button" onclick="unmuteButtonTapped()" style="display: none;">
 				<img src="../img/muted-mic-active.png" class="card-button-image">
 			</button>
-			<button id="muted-mic-inactive" class="card-call-button" onclick="toggleMicButtons()" data-toggle="mute">
+			<button id="muted-mic-inactive" class="card-call-button" onclick="muteButtonTapped()" data-toggle="mute">
 				<img src="../img/muted-mic-inactive.png" class="card-button-image">
 			</button>
 			<button id="hangup" class="card-disconnect-button" style="display: none;" onclick="hangupClicked()">
