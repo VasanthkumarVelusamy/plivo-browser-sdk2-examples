@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/webApp-plivo/public'));
 app.get('/', function(req, res) {
   // ejs render automatically looks in the views folder
   console.log("entered index")
-  res.render('index');
+  res.render('home');
 });
 
 // set the home page route
