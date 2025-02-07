@@ -19,20 +19,11 @@ app.use(express.static(__dirname + '/webApp-plivo/public'));
 app.get('/', function(req, res) {
   // ejs render automatically looks in the views folder
   console.log("entered index")
-  // res.render('index');
-  res.render('index', {userId: "privateuser2875358196375628740", userName: "Vasanthkumar"});
+  res.render('index');
 });
 
 // set the home page route
-app.get('/user', function(req, res) {
-  // ejs render automatically looks in the views folder
-  console.log("entered index")
-  // res.render('index');
-  res.render('index', {userId: "privateuser2875358196375628740", userName: "Vasanthkumar"});
-});
-
-// set the home page route
-app.get('/user/:id', function(req, res) {
+app.get('/u/:id', function(req, res) {
   // ejs render automatically looks in the views folder
   const voip_id = req.params.id;
   fetch(`https://letmeknoww.onrender.com/find_by_voip/${voip_id}`)
