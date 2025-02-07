@@ -34,8 +34,8 @@ app.get('/user', function(req, res) {
 // set the home page route
 app.get('/user/:id', function(req, res) {
   // ejs render automatically looks in the views folder
-  const userId = req.params.id;
-  fetch(`https://letmeknoww.onrender.com/find_user?user_id=${userId}`)
+  const voip_id = req.params.id;
+  fetch(`https://letmeknoww.onrender.com/find_by_voip/${voip_id}`)
   .then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
