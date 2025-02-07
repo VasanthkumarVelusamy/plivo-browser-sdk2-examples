@@ -24,6 +24,14 @@ app.get('/', function(req, res) {
 });
 
 // set the home page route
+app.get('/user', function(req, res) {
+  // ejs render automatically looks in the views folder
+  console.log("entered index")
+  // res.render('index');
+  res.render('index', {userId: "privateuser2875358196375628740", userName: "Vasanthkumar"});
+});
+
+// set the home page route
 app.get('/user/:id', function(req, res) {
   // ejs render automatically looks in the views folder
   const userId = req.params.id;
