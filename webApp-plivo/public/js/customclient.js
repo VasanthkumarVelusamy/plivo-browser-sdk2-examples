@@ -503,7 +503,7 @@ function refreshSettings(){
 function updateSettings(val){
 	let loglevel = document.getElementById('loglevelbtn').value;
 	val.debug = loglevel;
-	changeVal(val, document.getElementById('onpageload').checked, 'permOnClick', true);
+	// changeVal(val, document.getElementById('onpageload').checked, 'permOnClick', true);
 	changeVal(val, document.getElementById('monitorquality').checked, "enableTracking", false);
 	changeVal(val, document.getElementById('dontcloseprotect').checked, "closeProtection", true);
 	changeVal(val, document.getElementById('allowdscp').checked, "dscp", false);
