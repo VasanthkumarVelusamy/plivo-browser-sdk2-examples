@@ -9,7 +9,7 @@ let incomingNotificationAlert = null;
 
 var defaultSettings = {
 	"debug":"INFO",
-	"permOnClick":true,
+	"permOnClick":false,
 	"codecs":[  "OPUS", "PCMU" ],
 	"audioConstraints": {
 		"optional": [
@@ -347,8 +347,6 @@ function onMediaPermission(evt){
 		customAlert('Media permission error',evt.error, 'warn');
 		if(client.browserDetails.browser == "chrome")
 			$('#mediaAccessBlock').modal('show');
-	} else {
-		make_call();
 	}
 }
 
@@ -466,7 +464,7 @@ function closeMetrics(e){
 
 function resetSettings(){
 	document.getElementById('loglevelbtn').value = "INFO"
-	// document.getElementById('onpageload').checked = true
+	document.getElementById('onpageload').checked = true
 	document.getElementById('monitorquality').checked = true
 	document.getElementById('dontcloseprotect').checked = true
 	document.getElementById('allowdscp').checked = true
@@ -481,7 +479,7 @@ function refreshSettings(){
 	if(getSettings){
 		var parsedSettings = JSON.parse(getSettings);
 		document.getElementById('loglevelbtn').value = parsedSettings.debug;
-		// updateElementsInConfig(parsedSettings.permOnClick, 'oncallinit', 'onpageload');
+		updateElementsInConfig(parsedSettings.permOnClick, 'oncallinit', 'onpageload');
 		updateElementsInConfig(parsedSettings.enableTracking, 'monitorquality', 'dontmonitorquality');
 		updateElementsInConfig(parsedSettings.closeProtection, 'closeprotect', 'dontcloseprotect');
 		updateElementsInConfig(parsedSettings.dscp, 'allowdscp', 'nodscp');
@@ -503,7 +501,7 @@ function refreshSettings(){
 function updateSettings(val){
 	let loglevel = document.getElementById('loglevelbtn').value;
 	val.debug = loglevel;
-	// changeVal(val, document.getElementById('onpageload').checked, 'permOnClick', true);
+	changeVal(val, document.getElementById('onpageload').checked, 'permOnClick', true);
 	changeVal(val, document.getElementById('monitorquality').checked, "enableTracking", false);
 	changeVal(val, document.getElementById('dontcloseprotect').checked, "closeProtection", true);
 	changeVal(val, document.getElementById('allowdscp').checked, "dscp", false);
@@ -530,14 +528,6 @@ function changeVal(val, access, element, expected) {
 	if(!access) {
 		val[element] = expected;
 	}
-}
-
-function getMicAccessPermission() {
-	document.getElementById("oncallinit").checked = true
-}
-
-function revokeMicAccessPermission() {
-	document.getElementById("oncallinit").checked = false
 }
 
 function customAlert(header,alertMessage,type){
@@ -901,11 +891,6 @@ $('#tmute').click(function(e){
 });
 
 $('#makecall').click(function(e){
-	// make_call();
-	getMicAccessPermission()
-});
-
-function make_call() {
 	console.log("same data received in customclient js")
 	var to = userId,
 	// var to = "iossample69075541768525161253",
@@ -939,7 +924,7 @@ function make_call() {
 	$('#boundType').html('Outgoing : '+to);
 	$('#callDuration').html('00:00:00');
 	$('.callinfo').show();
-}
+});
 
 $('#updateSettings').click(function(e){
 	updateSettings(defaultSettings);	
