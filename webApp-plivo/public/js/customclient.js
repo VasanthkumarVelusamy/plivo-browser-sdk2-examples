@@ -466,7 +466,7 @@ function closeMetrics(e){
 
 function resetSettings(){
 	document.getElementById('loglevelbtn').value = "INFO"
-	document.getElementById('onpageload').checked = true
+	// document.getElementById('onpageload').checked = true
 	document.getElementById('monitorquality').checked = true
 	document.getElementById('dontcloseprotect').checked = true
 	document.getElementById('allowdscp').checked = true
